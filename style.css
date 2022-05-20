@@ -1,0 +1,822 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    width: 100%;
+    height: 100vh;
+    background-image: url(asset/rsz_1milad-fakurian-ehhb5zh-qfe-unsplash.jpg);
+    background-size: cover;
+    position: absolute;
+    box-sizing: border-box;
+}
+
+.nav {
+    width: 100vw;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 50px;
+    padding-left: 30px;
+    box-sizing: border-box;
+    ;
+}
+
+.menu {
+    width: 300px;
+    height: auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+a img {
+    height: 30px;
+    width: 30px;
+    background-color: rgb(236, 228, 228);
+    border-radius: 10px;
+    padding: 3px;
+    margin-right: 50px;
+}
+
+a img:hover {
+    background-color: rgb(187, 183, 183);
+}
+
+.burger-content {
+    width: 500px;
+    height: 100vh;
+    background-color: rgb(56, 53, 53);
+    color: white;
+    z-index: 2;
+    position: absolute;
+    top: -18px;
+    display: none;
+    box-sizing: border-box;
+}
+
+
+
+.burger-link li a {
+    color: white;
+    font-size: 2rem;
+    line-height: 25vh;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.burger-link li a:hover {
+    color: rgb(184, 183, 183);
+}
+
+/*Hamburger Menu*/
+.menu-toggle {
+    /* position: absolute; */
+    margin-top: 20px;
+    height: 20px;
+    /* justify-content: space-between; */
+    /* background-color: brown; */
+    z-index: 10;
+}
+
+.menu-toggle input {
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.menu-toggle span {
+    position: relative;
+    display: block;
+    width: 28px;
+    height: 3px;
+    margin-top: 5px;
+    background: rgb(250, 248, 248);
+    border-radius: 3px;
+    transition: all 0.5s;
+}
+
+
+/*Hamburger Menu Animation*/
+.menu-toggle span:nth-child(2) {
+    transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+    transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked~span:nth-child(2) {
+    background-color: white;
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked~span:nth-child(4) {
+    background-color: white;
+    transform: rotate(-45deg) translate(-1px, 0px);
+}
+
+.menu-toggle input:checked~span:nth-child(3) {
+    opacity: 0;
+    transform: scale(0);
+}
+
+
+
+.logo {
+    font-size: 25px;
+    line-height: 50px;
+}
+
+.logo a {
+    font-family: 'Oswald', sans-serif;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 300;
+}
+
+li {
+    display: inline;
+    list-style: none;
+    /* margin-left: 10px; */
+}
+
+.side-bar {
+    margin-top: 200px;
+    width: fit-content;
+    height: fit-content;
+    display: inline-block;
+    position: fixed;
+    background-color: rgb(53, 47, 47);
+    z-index: 10;
+}
+
+.line {
+    margin: 35px;
+    width: 25px;
+    height: 3px;
+    background-color: rgb(218, 212, 212);
+    cursor: pointer;
+}
+
+.content-header {
+    width: 100%;
+    height: 50%;
+    padding-left: 30px;
+    padding-right: 30px;
+    position: absolute;
+    top: 100px;
+    /* left: 130px; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+h1 {
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-family: 'Oswald',
+        sans-serif;
+    font-weight: 400;
+}
+
+.name {
+    box-sizing: border-box;
+}
+
+.name h1 {
+    font-size: 5rem;
+    font-weight: 350;
+    margin-bottom: 0;
+}
+
+p {
+    width: 500px;
+    font-size: 20px;
+    color: white;
+    line-height: 30px;
+    letter-spacing: 3px;
+    text-align: justify;
+    font-family: 'Nunito Sans',
+        sans-serif;
+}
+
+.portfolio h1 {
+    font-size: 3.5rem;
+    border-radius: 10px;
+    padding: 10px;
+    background: #666;
+    color: #222;
+    text-shadow: 0 1px 1px white;
+}
+
+
+/* ABOUT */
+
+.content-main-about {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 657px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* background: linear-gradient(to bottom, rgb(84, 128, 112), white); */
+    background-color: rgb(255, 255, 255);
+    /* background-color: #666; */
+}
+
+.main-about {
+    opacity: 0;
+    transform: translate(0, 40px);
+    transition: 1s;
+}
+
+.main-about p {
+    font-weight: bold;
+}
+
+.main-about h1,
+.main-about p {
+    color: black;
+}
+
+.img-about {
+    border: 3px dashed black;
+    padding: 3px;
+    opacity: 0;
+    transform: translate(0, 40px);
+    transition: 1s;
+}
+
+.img-about img {
+    border-radius: 15px;
+    opacity: .7;
+}
+
+/* INTEREST */
+
+.content-main-hobbies {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 1300px;
+    /* background-color: aqua; */
+}
+
+.box-hobbies {
+    height: 60vh;
+    background: linear-gradient(to bottom, rgb(84, 128, 112), white);
+    /* box-shadow: -15px 0px 15px rgb(119, 105, 105),
+        15px 0px 15px rgb(119, 105, 105); */
+    position: relative;
+    bottom: 20px;
+}
+
+.main-hobbies {
+    margin-bottom: 50px;
+    opacity: 0;
+    transform: translate(0, 40px);
+    transition: 1s;
+}
+
+.main-hobbies h1 {
+    color: rgb(248, 242, 242);
+    text-align: center;
+    padding-top: 50px;
+}
+
+.card {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.card img {
+    box-shadow: 5px 5px 10px rgb(84, 128, 112);
+    opacity: .7;
+}
+
+.img-interest {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-evenly;
+    padding-left: 70px;
+    padding-right: 70px;
+    margin-top: 50px;
+    opacity: 0;
+    transform: translate(0, 40px);
+    transition: 1s;
+}
+
+.img-interest img {
+    width: 225px;
+    height: 306px;
+    margin-left: 5px;
+    border-radius: 15px;
+}
+
+
+/* ASSIGNMENT */
+
+.content-main-dicoding {
+    width: 100%;
+    height: 150vh;
+    position: absolute;
+    top: 1955px;
+    background: linear-gradient(to top, rgb(121, 114, 114), rgb(253, 251, 251));
+    /* background-color: rgb(26, 24, 29); */
+}
+
+.content-main-dicoding h1 {
+    text-align: center;
+    color: rgb(44, 42, 42);
+}
+
+.kursus-1,
+.kursus-2 {
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: translate(40px, 0px);
+    transition: 1s;
+}
+
+.kursus-2 {
+    transform: translate(-40px, 0px);
+    transition: 3s;
+}
+
+.content-main-dicoding img {
+    width: 500px;
+    height: 300px;
+    border-radius: 20px 5px;
+}
+
+.exp-kursus1 {
+    height: auto;
+    width: 500px;
+    margin-left: 30px;
+    text-align: right;
+}
+
+.kursus-1 img {
+    box-shadow: 3px 3px 15px rgb(150, 145, 145);
+}
+
+.kursus-2 img {
+    box-shadow: -3px -3px 15px rgb(150, 145, 145);
+}
+
+.content-main-dicoding h3 {
+    margin-bottom: 5px;
+    font-family: 'Oswald',
+        sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.content-main-dicoding p {
+    width: 500px;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: justify;
+    background-color: rgb(65, 62, 62);
+    border-radius: 10px;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.tbl-1,
+.tbl-2 {
+    height: 55px;
+    width: 120px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    color: rgb(41, 34, 34);
+    background-color: rgb(247, 247, 246);
+    font-size: 13px;
+    font-weight: 700;
+    box-shadow: inset 3px 3px 5px rgb(187, 173, 173),
+        inset -3px -3px 5px rgb(187, 173, 173);
+}
+
+.kursus-2 {
+    margin-top: 100px;
+}
+
+.exp-kursus2 {
+    margin-right: 30px;
+}
+
+.tbl-1:hover,
+.tbl-2:hover {
+    background-color: rgb(41, 34, 34);
+    color: rgb(247, 247, 246);
+    transform: scale(1.1);
+    transition: .5s;
+}
+
+/* CONTACT */
+
+.content-main-contact {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 2940px;
+    /* background-color: blueviolet; */
+    background: linear-gradient(to top, rgb(121, 114, 114), rgb(253, 251, 251));
+    color: black;
+}
+
+.main-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    opacity: 0;
+    transform: translate(0, 40px);
+    transition: 1s;
+}
+
+.main-contact h1 {
+    color: #222;
+}
+
+.content-main-contact p {
+    color: black;
+    text-align: center;
+}
+
+.content-main-contact a {
+    color: black;
+}
+
+.content-main-contact a:hover {
+    background-color: rgb(126, 123, 123);
+    font-size: 2rem;
+}
+
+.trademark {
+    width: 350px;
+    height: fit-content;
+    border: 2px dashed rgb(95, 94, 94);
+    margin-top: 150px;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transform: translate(0, 40px);
+    transition: 3s;
+}
+
+.trademark p {
+    font-size: .9rem;
+    font-weight: bolder;
+}
+
+
+/* ANIMASI */
+
+@keyframes munculMenu {
+    0% {
+        right: -540px;
+    }
+
+    100% {
+        right: 0;
+    }
+}
+
+@keyframes tutupMenu {
+    0% {
+        right: 0;
+    }
+
+    100% {
+        right: -540px;
+    }
+}
+
+
+
+/*Responsive break-point*/
+@media screen and (max-width: 1100px) {
+    /* body {
+        max-width: 100%;
+        overflow-x: hidden;
+    } */
+
+    .content-header {
+        height: fit-content;
+        /* margin-top: 50px; */
+        padding-left: 30px;
+        padding-right: 30px;
+        display: flex;
+        overflow: hidden;
+    }
+
+    h1 {
+        color: white;
+        font-family: 'Oswald', sans-serif;
+        font-weight: 400;
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-family: 'Oswald',
+            sans-serif;
+        font-weight: 400;
+    }
+
+    .name h1 {
+        font-size: 3rem;
+        font-weight: 350;
+        text-align: center;
+    }
+
+    .name p {
+        font-size: 1.1rem;
+    }
+
+    p {
+        width: 300px;
+        font-size: 16px;
+        line-height: 30px;
+        letter-spacing: 2px;
+        text-align: justify;
+    }
+
+    .portfolio h1 {
+        font-size: 2.5rem;
+    }
+
+    /* INTEREST */
+    .img-interest {
+        padding-left: 85px;
+        padding-right: 80px;
+    }
+
+    .img-interest img {
+        width: 205px;
+        height: 286px;
+        margin-left: 5px;
+        border-radius: 15px;
+    }
+
+    /* ASSIGNMENT */
+
+    .content-main-dicoding {
+        height: fit-content;
+        padding-bottom: 30px;
+        top: 1870px;
+    }
+
+    .kursus-1,
+    .kursus-2 {
+        margin-top: 70px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .kursus-2 {
+        flex-direction: column-reverse;
+    }
+
+    .exp-kursus1,
+    .exp-kursus2 {
+        text-align: center;
+    }
+
+    /* CONTACT */
+
+    .content-main-contact {
+        top: 3220px;
+    }
+
+    .trademark {
+        width: 250px;
+        margin-top: 80px;
+    }
+}
+
+@media screen and (max-width: 870px) {
+    .content-header {
+        height: fit-content;
+        /* margin-top: 50px; */
+        padding-left: 30px;
+        padding-right: 30px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    h1 {
+        color: white;
+        font-family: 'Oswald', sans-serif;
+        font-weight: 400;
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-family: 'Oswald',
+            sans-serif;
+        font-weight: 400;
+    }
+
+    .name h1 {
+        font-size: 3rem;
+        font-weight: 350;
+        text-align: center;
+    }
+
+    .name p {
+        font-size: 1.1rem;
+    }
+
+    p {
+        width: 300px;
+        font-size: 16px;
+        line-height: 30px;
+        letter-spacing: 2px;
+        text-align: justify;
+    }
+
+    .portfolio h1 {
+        font-size: 2.5rem;
+    }
+
+    /* ABOUT */
+
+    .content-main-about {
+        width: 100%;
+        height: 700px;
+        padding: 50px;
+        position: absolute;
+        top: 570px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .img-about img {
+        width: 150px;
+        height: 200px;
+        border-radius: 15px;
+        opacity: .7;
+    }
+
+    /* INTEREST */
+
+    .content-main-hobbies {
+        height: fit-content;
+        position: absolute;
+        top: 1360px;
+    }
+
+    .box-hobbies {
+        height: fit-content;
+    }
+
+    .main-hobbies {
+        margin-bottom: 50px;
+        opacity: 0;
+        transform: translate(0, 40px);
+        transition: 1s;
+    }
+
+    .main-hobbies h1 {
+        color: rgb(248, 242, 242);
+        text-align: center;
+        padding-top: 50px;
+    }
+
+    .img-interest {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* ASSIGNMENT */
+
+    .content-main-dicoding {
+        height: fit-content;
+        padding-bottom: 30px;
+        top: 2800px;
+    }
+
+    .kursus-1,
+    .kursus-2 {
+        margin-top: 70px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .kursus-2 {
+        flex-direction: column-reverse;
+    }
+
+    .exp-kursus1,
+    .exp-kursus2 {
+        text-align: center;
+    }
+
+    /* CONTACT */
+
+    .content-main-contact {
+        top: 4180px;
+    }
+
+    .trademark {
+        width: 250px;
+        margin-top: 80px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .side-bar {
+        margin-top: 200px;
+        width: 70px;
+    }
+
+    .line {
+        margin-left: 20px;
+    }
+
+    /* ABOUT */
+
+    .main-about h1 {
+        text-align: center;
+    }
+
+    .img-about {
+        margin-bottom: 10px;
+    }
+
+    .img-about img {
+        width: 120px;
+        height: 180px;
+    }
+
+
+    /* ASSIGNMENT */
+
+    .content-main-dicoding img {
+        width: 300px;
+        height: 180px;
+    }
+
+    .exp-kursus1 {
+        margin-left: 0px;
+        text-align: center;
+    }
+
+    .exp-kursus1,
+    .exp-kursus2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-right: 0;
+    }
+
+    .exp-kursus1 p,
+    .exp-kursus2 p {
+        width: 300px;
+        margin-left: 0px;
+    }
+
+    .exp-kursus2 p {
+        margin-left: 0px;
+    }
+
+    .exp-kursus2 h3 {
+        width: 250px;
+    }
+
+    /* CONTACT */
+
+    .content-main-contact {
+        top: 4105px;
+    }
+}
